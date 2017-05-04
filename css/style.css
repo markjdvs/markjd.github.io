@@ -5,3 +5,13 @@ purple: #5F052E
 navy: #19336E
 
 */
+
+body {
+  font-family: 'Muli', sans-serif;
+}
+
+li {
+  list-style: none;
+  color: #fff;
+  background-color: #5F052E
+}
