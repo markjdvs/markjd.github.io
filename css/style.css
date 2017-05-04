@@ -12,6 +12,25 @@ body {
 
 li {
   list-style: none;
-  color: #fff;
-  background-color: #5F052E
+}
+
+a, a:hover {
+  text-decoration: none;
+  font-weight: 900;
+}
+
+a.fern {
+  color: #5F052E;
+}
+
+a.drank {
+  color: #19336E;
+}
+
+a.rite {
+  color: #095839;
+}
+
+a.guide {
+  color: #5F052E;
 }
