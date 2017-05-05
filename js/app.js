@@ -41,24 +41,48 @@ $(() => {
     }
   ];
 
-  function changeClass() {
+  let projectsDisplayed = false;
+  let infoDisplayed = false;
 
+  function toggleInfo() {
+    if(infoDisplayed) {
+      const className = $(this).data('proj');
+      $(`.${className} p`).slideUp();
+      $(`.${className} img.infoUp`).hide();
+      $(`.${className} img.infoDown`).show();
+    }
+    else {
+      const className = $(this).data('proj');
+      $(`.${className} p`).slideDown(1000);
+      $(`.${className} img.infoDown`).hide();
+      $(`.${className} img.infoUp`).show();
+
+    }
+    infoDisplayed = !infoDisplayed;
   }
 
   function createPage() {
     $('body').append(`<div class='title'><h1>Mark J Davis</h1></div><button class='projects'>Projects</button>`);
-    $('button').on('click', createProjects);
+    $('button').on('click', toggleProjects);
   }
 
-  function createProjects() {
-    $('div.projects').remove();
-    $('body').append(`<div><div><div class='projects'></div></div></div>`);
-    $.each(projects, (i, project) => {
-      setTimeout(() => {
-        $('div.projects').append(`<div class='${project.class}'><h1>${project.appName}</h1><a href='${project.link}'><img src='images/playIcon.png'></a></div>`);
-     }, i*100);
-    });
-    $('div.projects').on('mouseover', 'div', changeClass);
+  function toggleProjects() {
+    if(projectsDisplayed) {
+      $('div.projects').fadeOut(400, () => {
+        $('div.projects').remove();
+      });
+    }
+    else {
+      $('body').append(`<div><div><div class='projects'></div></div></div>`);
+      $.each(projects, (i, project) => {
+        setTimeout(() => {
+          $('div.projects').append(`<div class='${project.class}'><h1>${project.appName}</h1><p>${project.content}</p><a href='${project.link}' target='_blank'><img src='images/playIcon.png'></a><span><img class='infoDown' src='images/infoDown.png' data-proj='${project.class}'></span><span><img class='infoUp' src='images/infoUp.png' data-proj='${project.class}'></span></div>`);
+       }, i*100);
+      });
+      $('div.projects').on('click', 'img.infoDown', toggleInfo);
+      $('div.projects').on('click', 'img.infoUp', toggleInfo);
+    }
+    projectsDisplayed = !projectsDisplayed;
   }
 
   createPage();

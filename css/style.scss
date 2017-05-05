@@ -1,53 +1,60 @@
-/*
-green: #095839
-purple: #5F052E
-navy: #19336E
-*/
+@import url('https://fonts.googleapis.com/css?family=Muli:400,900');
+
+$green: #095839;
+$purple: #5F052E;
+$navy: #19336E;
 
 body {
   font-family: 'Muli', sans-serif;
   button:focus {
     outline: 0;
   }
-  button.projects {
-    height: 70px;
-    width: 70px;
-    border-radius: 100%;
-    border: 2px solid #5F052E;
-    background-color: #fff;
+  button {
+    &.projects {
+      height: 70px;
+      width: 70px;
+      border-radius: 100%;
+      border: 0;
+      background-color: $purple;
+      font-size: 14px;
+      color: #fff;
+    }
   }
   div.title {
     font-size: 30px;
     h1 {
-      color: #19336E;
+      color: $navy;
     }
   }
   div.projects {
-    width: 250px;
-    height: 250px;
-    border-radius: 100%;
-    &.fern {
-      background-color: #5F052E;
-      h1 {
-        color: #fff;
+    div {
+      width: 250px;
+      p {
+        display: none;
+        font-size: 10px;
       }
-    }
-    &.drank {
-      background-color: #19336E;
-      h1 {
-        color: #fff;
+      img.infoUp {
+        display: none;
       }
-    }
-    &.rite {
-      background-color: #095839;
-      h1 {
-        color: #fff;
+      &.fern {
+        h1 {
+          color: $purple;
+        }
       }
-    }
-    &.guide {
-      background-color: #5F052E;
-      h1 {
-        color: #fff;
+      &.drank {
+        h1 {
+          color: $navy;
+        }
+      }
+      &.rite {
+        h1 {
+          color: $green;
+        }
+      }
+      &.guide {
+        h1 {
+          color: $purple;
+        }
       }
     }
   }

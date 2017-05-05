@@ -1,8 +1,4 @@
-/*
-green: #095839
-purple: #5F052E
-navy: #19336E
-*/
+@import url("https://fonts.googleapis.com/css?family=Muli:400,900");
 body {
   font-family: 'Muli', sans-serif; }
   body button:focus {
@@ -11,31 +7,28 @@ body {
     height: 70px;
     width: 70px;
     border-radius: 100%;
-    border: 2px solid #5F052E;
-    background-color: #fff; }
+    border: 0;
+    background-color: #5F052E;
+    font-size: 14px;
+    color: #fff; }
   body div.title {
     font-size: 30px; }
     body div.title h1 {
       color: #19336E; }
-  body div.projects {
-    width: 250px;
-    height: 250px;
-    border-radius: 100%; }
-    body div.projects.fern {
-      background-color: #5F052E; }
-      body div.projects.fern h1 {
-        color: #fff; }
-    body div.projects.drank {
-      background-color: #19336E; }
-      body div.projects.drank h1 {
-        color: #fff; }
-    body div.projects.rite {
-      background-color: #095839; }
-      body div.projects.rite h1 {
-        color: #fff; }
-    body div.projects.guide {
-      background-color: #5F052E; }
-      body div.projects.guide h1 {
-        color: #fff; }
+  body div.projects div {
+    width: 250px; }
+    body div.projects div p {
+      display: none;
+      font-size: 10px; }
+    body div.projects div img.infoUp {
+      display: none; }
+    body div.projects div.fern h1 {
+      color: #5F052E; }
+    body div.projects div.drank h1 {
+      color: #19336E; }
+    body div.projects div.rite h1 {
+      color: #095839; }
+    body div.projects div.guide h1 {
+      color: #5F052E; }
 
 /*# sourceMappingURL=style.css.map */
