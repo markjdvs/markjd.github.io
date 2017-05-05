@@ -1,17 +1,15 @@
 /*
-
 green: #095839
 purple: #5F052E
 navy: #19336E
-
 */
 
 body {
   font-family: 'Muli', sans-serif;
 }
 
-li {
-  list-style: none;
+button:focus {
+  outline: 0;
 }
 
 a, a:hover {
@@ -19,18 +17,51 @@ a, a:hover {
   font-weight: 900;
 }
 
+div.title {
+  font-size: 30px;
+}
+
+div.projects > div {
+  width: 200px;
+  height: 200px;
+}
+
+div.fern {
+  background-color: #5F052E;
+}
+
 a.fern {
-  color: #5F052E;
+  color: #fff;
+}
+
+div.drank {
+  background-color: #19336E;
 }
 
 a.drank {
-  color: #19336E;
+  color: #fff;
+}
+
+div.rite {
+  background-color: #095839;
 }
 
 a.rite {
-  color: #095839;
+  color: #fff;
+}
+
+div.guide {
+  background-color: #5F052E;
 }
 
 a.guide {
-  color: #5F052E;
+  color: #fff;
+}
+
+button.projects {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  border: 2px solid #5F052E;
+  background-color: #fff;
 }

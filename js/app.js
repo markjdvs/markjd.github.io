@@ -41,21 +41,24 @@ $(() => {
     }
   ];
 
+  function changeClass() {
 
-  function logClick() {
-    console.log('click');
+  }
+
+  function createPage() {
+    $('body').append(`<div class="title">Mark Davis</div><button class='projects'>Projects</button>`);
+    $('button').on('click', createProjects);
   }
 
   function createProjects() {
-    $('div.row').append(`<ul class='twelve columns'></ul>`);
+    $('body').append(`<div class='container'><div class='row'><div class='projects'></div></div></div>`);
     $.each(projects, (i, project) => {
-      $('ul').append(`<li><a class='${project.class}' href='${project.link}'><h1>${project.appName}</h1></a></li>`);
+      setTimeout(() => {
+        $('div.projects').append(`<div class='${project.class}'><a class='${project.class}' href='${project.link}'><h1>${project.appName}</h1></a></div>`);
+     }, i*100);
     });
-
-    $('ul').on('click', 'li', logClick);
-
+    $('div.projects').on('mouseover', 'div', changeClass);
   }
 
-  createProjects();
-
+  createPage();
 });
