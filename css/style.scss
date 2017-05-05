@@ -1,0 +1,54 @@
+/*
+green: #095839
+purple: #5F052E
+navy: #19336E
+*/
+
+body {
+  font-family: 'Muli', sans-serif;
+  button:focus {
+    outline: 0;
+  }
+  button.projects {
+    height: 70px;
+    width: 70px;
+    border-radius: 100%;
+    border: 2px solid #5F052E;
+    background-color: #fff;
+  }
+  div.title {
+    font-size: 30px;
+    h1 {
+      color: #19336E;
+    }
+  }
+  div.projects {
+    width: 250px;
+    height: 250px;
+    border-radius: 100%;
+    &.fern {
+      background-color: #5F052E;
+      h1 {
+        color: #fff;
+      }
+    }
+    &.drank {
+      background-color: #19336E;
+      h1 {
+        color: #fff;
+      }
+    }
+    &.rite {
+      background-color: #095839;
+      h1 {
+        color: #fff;
+      }
+    }
+    &.guide {
+      background-color: #5F052E;
+      h1 {
+        color: #fff;
+      }
+    }
+  }
+}

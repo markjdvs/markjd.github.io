@@ -46,15 +46,16 @@ $(() => {
   }
 
   function createPage() {
-    $('body').append(`<div class="title">Mark Davis</div><button class='projects'>Projects</button>`);
+    $('body').append(`<div class='title'><h1>Mark J Davis</h1></div><button class='projects'>Projects</button>`);
     $('button').on('click', createProjects);
   }
 
   function createProjects() {
-    $('body').append(`<div class='container'><div class='row'><div class='projects'></div></div></div>`);
+    $('div.projects').remove();
+    $('body').append(`<div><div><div class='projects'></div></div></div>`);
     $.each(projects, (i, project) => {
       setTimeout(() => {
-        $('div.projects').append(`<div class='${project.class}'><a class='${project.class}' href='${project.link}'><h1>${project.appName}</h1></a></div>`);
+        $('div.projects').append(`<div class='${project.class}'><h1>${project.appName}</h1><a href='${project.link}'><img src='images/playIcon.png'></a></div>`);
      }, i*100);
     });
     $('div.projects').on('mouseover', 'div', changeClass);

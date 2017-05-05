@@ -3,65 +3,39 @@ green: #095839
 purple: #5F052E
 navy: #19336E
 */
-
 body {
-  font-family: 'Muli', sans-serif;
-}
+  font-family: 'Muli', sans-serif; }
+  body button:focus {
+    outline: 0; }
+  body button.projects {
+    height: 70px;
+    width: 70px;
+    border-radius: 100%;
+    border: 2px solid #5F052E;
+    background-color: #fff; }
+  body div.title {
+    font-size: 30px; }
+    body div.title h1 {
+      color: #19336E; }
+  body div.projects {
+    width: 250px;
+    height: 250px;
+    border-radius: 100%; }
+    body div.projects.fern {
+      background-color: #5F052E; }
+      body div.projects.fern h1 {
+        color: #fff; }
+    body div.projects.drank {
+      background-color: #19336E; }
+      body div.projects.drank h1 {
+        color: #fff; }
+    body div.projects.rite {
+      background-color: #095839; }
+      body div.projects.rite h1 {
+        color: #fff; }
+    body div.projects.guide {
+      background-color: #5F052E; }
+      body div.projects.guide h1 {
+        color: #fff; }
 
-button:focus {
-  outline: 0;
-}
-
-a, a:hover {
-  text-decoration: none;
-  font-weight: 900;
-}
-
-div.title {
-  font-size: 30px;
-}
-
-div.projects > div {
-  width: 200px;
-  height: 200px;
-}
-
-div.fern {
-  background-color: #5F052E;
-}
-
-a.fern {
-  color: #fff;
-}
-
-div.drank {
-  background-color: #19336E;
-}
-
-a.drank {
-  color: #fff;
-}
-
-div.rite {
-  background-color: #095839;
-}
-
-a.rite {
-  color: #fff;
-}
-
-div.guide {
-  background-color: #5F052E;
-}
-
-a.guide {
-  color: #fff;
-}
-
-button.projects {
-  height: 70px;
-  width: 70px;
-  border-radius: 50%;
-  border: 2px solid #5F052E;
-  background-color: #fff;
-}
+/*# sourceMappingURL=style.css.map */
