@@ -6,6 +6,8 @@ body {
     padding: 60px 0px 0px 0px; }
     body main button:focus {
       outline: 0; }
+    body main button:hover {
+      animation: pulse 5s infinite; }
     body main button.about {
       height: 70px;
       width: 70px;
@@ -35,7 +37,7 @@ body {
         margin: 0 auto;
         padding-bottom: 15px; }
     body main div.projects div {
-      width: 250px;
+      width: 800px;
       margin: 0 auto; }
       body main div.projects div p {
         display: none;

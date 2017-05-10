@@ -13,6 +13,9 @@ body {
       outline: 0;
     }
     button {
+      &:hover {
+        animation: pulse 5s infinite;
+      }
       &.about {
         height: 70px;
         width: 70px;
@@ -50,7 +53,7 @@ body {
     }
     div.projects {
       div {
-        width: 250px;
+        width: 800px;
         margin: 0 auto;
         p {
           display: none;
@@ -81,5 +84,14 @@ body {
         }
       }
     }
+  }
+}
+
+@keyframes pulse {
+  0% {
+
+  }
+  100% {
+
   }
 }
