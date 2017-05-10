@@ -45,8 +45,14 @@ $(() => {
     }
   ];
 
+  const about = {
+    content1: `A love for connecting moving parts is why I chose to do Economics and Spanish at university. Knowing that I didn’t want to work in finance but not knowing my definitive career path, I fell into managing cocktail bars and an eye for detail and continual want to learn put me in good stead.`,
+    content2: `I wanted a change from the antisocial hours. For me coding is just another language; create a foundation from which I could expand on in my own time. An aspect of self-education and desire to continue in a dynamic industry lead me to code in my spare time and the course at GA seemed the perfect fit to kickstart that change.`
+  }
+
   let projectsDisplayed = false;
   let infoDisplayed = false;
+  let aboutDisplayed = false;
 
   function toggleInfo() {
     if(infoDisplayed) {
@@ -66,8 +72,19 @@ $(() => {
   }
 
   function createPage() {
-    $('body').append(`<div class='title'><h1>Mark J Davis</h1></div><button class='projects'>Projects</button>`);
-    $('button').on('click', toggleProjects);
+    $('main').append(`<div class='title'><h1>Mark J Davis</h1><p></p></div><button class='about'>About</button><button class='projects'>Projects</button>`);
+    $('button.projects').on('click', toggleProjects);
+    $('button.about').on('click', toggleAbout);
+  }
+
+  function toggleAbout() {
+    if(aboutDisplayed) {
+      $('div.about').remove();
+    }
+    else {
+      $('main').append(`<div class='about'><p>${about.content1}</p><p>${about.content2}</p></div>`);
+    }
+    aboutDisplayed = !aboutDisplayed;
   }
 
   function toggleProjects() {
@@ -77,7 +94,7 @@ $(() => {
       });
     }
     else {
-      $('body').append(`<div><div><div class='projects'></div></div></div>`);
+      $('main').append(`<div><div><div class='projects'></div></div></div>`);
       $.each(projects, (i, project) => {
         setTimeout(() => {
           $('div.projects').append(`

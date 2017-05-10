@@ -1,34 +1,54 @@
 @import url("https://fonts.googleapis.com/css?family=Muli:400,900");
 body {
   font-family: 'Muli', sans-serif; }
-  body button:focus {
-    outline: 0; }
-  body button.projects {
-    height: 70px;
-    width: 70px;
-    border-radius: 100%;
-    border: 0;
-    background-color: #5F052E;
-    font-size: 14px;
-    color: #fff; }
-  body div.title {
-    font-size: 30px; }
-    body div.title h1 {
-      color: #19336E; }
-  body div.projects div {
-    width: 250px; }
-    body div.projects div p {
-      display: none;
-      font-size: 10px; }
-    body div.projects div img.infoUp {
-      display: none; }
-    body div.projects div.fern h1 {
-      color: #5F052E; }
-    body div.projects div.drank h1 {
-      color: #19336E; }
-    body div.projects div.rite h1 {
-      color: #095839; }
-    body div.projects div.guide h1 {
-      color: #5F052E; }
+  body main {
+    text-align: center;
+    padding: 60px 0px 0px 0px; }
+    body main button:focus {
+      outline: 0; }
+    body main button.about {
+      height: 70px;
+      width: 70px;
+      border-radius: 100%;
+      border: 0;
+      background-color: #5F052E;
+      font-size: 14px;
+      color: #fff;
+      margin: 0 20px; }
+    body main button.projects {
+      height: 70px;
+      width: 70px;
+      border-radius: 100%;
+      border: 0;
+      background-color: #095839;
+      font-size: 14px;
+      color: #fff;
+      margin: 0 20px; }
+    body main div.title {
+      font-size: 30px; }
+      body main div.title h1 {
+        color: #19336E; }
+    body main div.about {
+      padding-top: 20px; }
+      body main div.about p {
+        width: 300px;
+        margin: 0 auto;
+        padding-bottom: 15px; }
+    body main div.projects div {
+      width: 250px;
+      margin: 0 auto; }
+      body main div.projects div p {
+        display: none;
+        font-size: 10px; }
+      body main div.projects div img.infoUp {
+        display: none; }
+      body main div.projects div.fern h1 {
+        color: #5F052E; }
+      body main div.projects div.drank h1 {
+        color: #19336E; }
+      body main div.projects div.rite h1 {
+        color: #095839; }
+      body main div.projects div.guide h1 {
+        color: #5F052E; }
 
 /*# sourceMappingURL=style.css.map */
