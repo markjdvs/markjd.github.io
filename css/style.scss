@@ -8,31 +8,32 @@ body {
   font-family: 'Muli', sans-serif;
   main {
     text-align: center;
-    padding: 60px 0px 0px 0px;
+    padding: 30px 0px 0px 0px;
     button:focus {
       outline: 0;
     }
     button {
+
       &:hover {
         animation: pulse 5s infinite;
       }
       &.about {
-        height: 70px;
-        width: 70px;
+        height: 100px;
+        width: 100px;
         border-radius: 100%;
         border: 0;
         background-color: $purple;
-        font-size: 14px;
+        font-size: 22px;
         color: #fff;
         margin: 0 20px;
       }
       &.projects {
-        height: 70px;
-        width: 70px;
+        height: 100px;
+        width: 100px;
         border-radius: 100%;
         border: 0;
         background-color: $green;
-        font-size: 14px;
+        font-size: 22px;
         color: #fff;
         margin: 0 20px;
       }
@@ -44,20 +45,25 @@ body {
       }
     }
     div.about {
-      padding-top: 20px;
+      padding-top: 40px;
       p {
-        width: 300px;
+        width: 500px;
         margin: 0 auto;
         padding-bottom: 15px;
+        font-size: 20px;
       }
     }
     div.projects {
+      padding-top: 30px;
+      max-width: 700px;
+      height: 40vh;
+      margin: 0 auto;
       div {
-        width: 800px;
-        margin: 0 auto;
+        width: 50%;
+        float: left;
         p {
           display: none;
-          font-size: 10px;
+          font-size: 18px;
         }
         img.infoUp {
           display: none;
@@ -84,14 +90,5 @@ body {
         }
       }
     }
-  }
-}
-
-@keyframes pulse {
-  0% {
-
-  }
-  100% {
-
   }
 }
