@@ -24,6 +24,7 @@ $(() => {
 
   function createPage() {
     $('main').append(`<div class='title'><h1>Mark J Davis</h1><p></p></div><button class='about'>About</button><button class='projects'>Projects</button>`);
+    toggleAbout();
     $('button.projects').on('click', toggleProjects);
     $('button.about').on('click', toggleAbout);
   }
