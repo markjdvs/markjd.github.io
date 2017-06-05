@@ -6,20 +6,21 @@ $navy: #19336E;
 
 body {
   font-family: 'Muli', sans-serif;
-  background-color: $purple;
   main {
-    text-align: center;
+    // text-align: center;
     padding: 30px 0px 0px 0px;
     button:focus {
       outline: 0;
     }
     button {
-      height: 100px;
-      width: 100px;
+      height: 125px;
+      width: 125px;
       border-radius: 100%;
       border: 0;
       background-color: #fff;
       font-size: 22px;
+      text-transform: uppercase;
+      font-weight: 800;
       margin: 0 20px;
       &:hover {
         animation: pulse 5s infinite;
@@ -28,7 +29,6 @@ body {
         color: $purple;
       }
       &.projects {
-
         color: $green;
       }
     }
@@ -51,15 +51,22 @@ body {
       }
     }
     div.projects {
-      padding-top: 30px;
+      text-align: center;
+      padding: 0;
       max-width: 700px;
-      height: 40vh;
+      height: 60vh;
       margin: 0 auto;
       div {
-        width: 50%;
+        border-radius: 10px;
+        // -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.5);
+        // -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.5);
+        box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.5);
+        width: 40%;
+        height: 30vh;
         float: left;
+        margin: 5px;
         p {
-          color: $purple;
+          color: #fff;
           letter-spacing: 1.5px;
           display: none;
           font-size: 18px;
@@ -67,24 +74,22 @@ body {
         img.infoUp {
           display: none;
         }
-        &.fern {
+        &:nth-child(3n+1) {
+          background-color: $purple;
           h1 {
-            color: $purple;
+            color: #fff;
           }
         }
-        &.drank {
+        &:nth-child(3n+2) {
+          background-color: $green;
           h1 {
-            color: $navy;
+            color: #fff;
           }
         }
-        &.rite {
+        &:nth-child(3n+3) {
+          background-color: $navy;
           h1 {
-            color: $green;
-          }
-        }
-        &.guide {
-          h1 {
-            color: $purple;
+            color: #fff;
           }
         }
       }

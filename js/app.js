@@ -55,15 +55,21 @@ $(() => {
               <p>${project.content}</p>
               <a href='${project.github}' target='_blank'><img src='images/github.png'></a>
               <a href='${project.link}' target='_blank'><img src='images/playIcon.png'></a>
-              <span><img class='infoDown' src='images/infoDown.png' data-proj='${project.class}'></span>
-              <span><img class='infoUp' src='images/infoUp.png' data-proj='${project.class}'></span>
+              <span><img class='plus' src='images/plus.png' data-proj='${project.class}'></span>
             </div>`).fadeIn();
         }, i*100);
       });
       $('div.projects').on('click', 'img.infoDown', toggleInfo);
       $('div.projects').on('click', 'img.infoUp', toggleInfo);
+      $('div.projects').on('click', 'img.plus', resizeSquare);
     }
     projectsDisplayed = !projectsDisplayed;
+  }
+
+  function resizeSquare(e) {
+    console.log($(e.target).parents('div.projects').height());
+    // $(e.target).parent().parent().animate({ 'height': });
+
   }
 
   createPage();
