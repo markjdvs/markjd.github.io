@@ -15,8 +15,6 @@ body {
       text-transform: uppercase;
       font-weight: 800;
       margin: 0 20px; }
-      body main button:hover {
-        animation: pulse 5s infinite; }
       body main button.about {
         color: #5F052E; }
       body main button.projects {
@@ -26,7 +24,13 @@ body {
       body main div.title h1 {
         color: #fff; }
     body main div.about {
-      padding-top: 40px; }
+      margin: 0 auto;
+      text-align: center;
+      border-radius: 10px;
+      max-width: 500px;
+      height: 500px;
+      box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5);
+      background-color: #5F052E; }
       body main div.about p {
         color: #fff;
         font-weight: 400;
@@ -38,14 +42,15 @@ body {
     body main div.projects {
       text-align: center;
       padding: 0;
-      max-width: 700px;
-      height: 60vh;
-      margin: 0 auto; }
+      max-width: 500px;
+      height: 500px;
+      margin: 0 auto;
+      overflow: hidden; }
       body main div.projects div {
         border-radius: 10px;
         box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5);
-        width: 40%;
-        height: 30vh;
+        width: 48%;
+        height: 48%;
         float: left;
         margin: 5px; }
         body main div.projects div p {

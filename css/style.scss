@@ -22,9 +22,6 @@ body {
       text-transform: uppercase;
       font-weight: 800;
       margin: 0 20px;
-      &:hover {
-        animation: pulse 5s infinite;
-      }
       &.about {
         color: $purple;
       }
@@ -39,7 +36,15 @@ body {
       }
     }
     div.about {
-      padding-top: 40px;
+      margin: 0 auto;
+      text-align: center;
+      border-radius: 10px;
+      max-width: 500px;
+      height: 500px;
+      // -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.5);
+      // -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.5);
+      box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.5);
+      background-color: $purple;
       p {
         color: #fff;
         font-weight: 400;
@@ -53,16 +58,17 @@ body {
     div.projects {
       text-align: center;
       padding: 0;
-      max-width: 700px;
-      height: 60vh;
+      max-width: 500px;
+      height: 500px;
       margin: 0 auto;
+      overflow: hidden;
       div {
         border-radius: 10px;
         // -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.5);
         // -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.5);
         box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.5);
-        width: 40%;
-        height: 30vh;
+        width: 48%;
+        height: 48%;
         float: left;
         margin: 5px;
         p {

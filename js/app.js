@@ -34,7 +34,7 @@ $(() => {
       $('div.about').remove();
     } else {
       $('div.projects').remove();
-      $('main').append(`<div class='about'><p>${about.content1}</p><p>${about.content2}</p></div>`);
+      $('main').append(`<div class='about'><p>${about.content1}</p><p>${about.content2}</p></div>`).hide().slideDown();
     }
     aboutDisplayed = !aboutDisplayed;
   }
@@ -67,9 +67,13 @@ $(() => {
   }
 
   function resizeSquare(e) {
-    console.log($(e.target).parents('div.projects').height());
-    // $(e.target).parent().parent().animate({ 'height': });
-
+    const grandparentOfTarget = $(e.target).parent().parent();
+    // grandparentOfTarget.index();
+    grandparentOfTarget.css({position: 'relative'});
+    const heightOfParent = $(e.target).parents('div.projects').height();
+    const widthOfParent = $(e.target).parents('div.projects').width();
+    // grandparentOfTarget.animate( { height: heightOfParent, width: widthOfParent } );
+    grandparentOfTarget.animate({right: '400px', bottom: '400px', width: widthOfParent, height: heightOfParent}, 1000);
   }
 
   createPage();
