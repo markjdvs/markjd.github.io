@@ -12,6 +12,16 @@ $(() => {
   const $projectsBtn = $('button.projects');
   const $aboutBtn = $('button.about');
   const $skillsBtn = $('button.skills');
+  const $navButtonsSwitch = $('li.navButtons');
+
+  // $navButtonsSwitch.on('click', toggleNavButtons);
+
+  function toggleNavButtons() {
+    $navButtonsSwitch.addClass('animated bounceOutUp');
+    setTimeout(function() {
+      $navButtonsSwitch.children().attr('src', './images/up.png');
+    }, 500);
+  }
 
   function createPage() {
     $introButtons.addClass('animated flipInX');
@@ -21,6 +31,7 @@ $(() => {
   }
 
   function toggleSkills() {
+    toggleNavButtons();
     $introButtons.addClass('animated flipOutX').fadeOut(700, () => {
       $('main').append(`<div class='skills'><ul></ul></div>`);
       $.each(skills, (i, skill) => {
@@ -46,6 +57,7 @@ $(() => {
   }
 
   function toggleAbout() {
+    toggleNavButtons();
     if(aboutDisplayed) {
       $introButtons.addClass('animated flipOutX').fadeOut(700, () => {
         $('div.about').fadeOut();
@@ -65,27 +77,30 @@ $(() => {
   }
 
   function toggleProjects() {
+    toggleNavButtons();
     if(projectsDisplayed) {
-      $('div.projects').fadeOut(400, () => {
-        $('div.projects').remove();
+      $introButtons.addClass('animated flipOutX').fadeOut(700, () => {
+        $('div.projects').fadeOut(400, () => {
+          $('div.projects').remove();
+        });
       });
     } else {
-      $('div.about').remove();
-      $('main').append(`<div class='projects'></div>`);
-      $.each(projects, (i, project) => {
-        setTimeout(() => {
-          $('div.projects').append(`
-            <div class='${project.class}'>
-              <h1>${project.appName}</h1>
-              <p>${project.content}</p>
-              <a href='${project.github}' target='_blank'><img src='images/github.png'></a>
-              <a href='${project.link}' target='_blank'><img src='images/playIcon.png'></a>
-              <span><img class='plus' src='images/plus.png' data-proj='${project.class}'></span>
-            </div>`).fadeIn();
-        }, i*100);
+      $introButtons.addClass('animated flipOutX').fadeOut(700, () => {
+        $('div.about').remove();
+        $('main').append(`<div class='projects'></div>`);
+        $.each(projects, (i, project) => {
+          setTimeout(() => {
+            $('div.projects').append(`
+              <div class='${project.class}'>
+                <h1>${project.appName}</h1>
+                <p>${project.content}</p>
+                <a href='${project.github}' target='_blank'><img src='images/github.png'></a>
+                <a href='${project.link}' target='_blank'><img src='images/playIcon.png'></a>
+                <span><img class='plus' src='images/plus.png' data-proj='${project.class}'></span>
+              </div>`).fadeIn();
+          }, i*100);
+        });
       });
-      $('div.projects').on('click', 'img.infoDown', toggleInfo);
-      $('div.projects').on('click', 'img.infoUp', toggleInfo);
       $('div.projects').on('click', 'img.plus', resizeSquare);
     }
     projectsDisplayed = !projectsDisplayed;

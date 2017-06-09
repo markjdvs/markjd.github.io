@@ -1,5 +1,17 @@
 @import url("https://fonts.googleapis.com/css?family=Muli:400,900");
 @import url(animate.css);
+.reverse {
+  animation: reverse 5s infinite; }
+
+@keyframes reverse {
+  20% {
+    transform: translate3d(0, -10px, 0); }
+  40%, 45% {
+    opacity: 1;
+    transform: translate3d(0, 20px, 0); }
+  to {
+    opacity: 0;
+    transform: translate3d(0, -2000px, 0); } }
 body {
   font-family: 'Muli', sans-serif; }
   body header {
@@ -9,10 +21,13 @@ body {
     body header li {
       margin: 0 20px;
       list-style: none;
-      display: inline-block; }
-      body header li:last-of-type {
-        margin-right: 40px;
-        float: right; }
+      display: inline-block;
+      float: right;
+      padding: 0 10px; }
+      body header li:first-of-type {
+        float: left; }
+      body header li img {
+        vertical-align: bottom; }
     body header span {
       font-weight: 400; }
   body main {

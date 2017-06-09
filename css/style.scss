@@ -5,6 +5,26 @@ $green: #095839;
 $purple: #5F052E;
 $navy: #19336E;
 
+.reverse {
+  animation: reverse 5s infinite;
+}
+
+@keyframes reverse {
+  20% {
+    transform: translate3d(0, -10px, 0);
+  }
+
+  40%, 45% {
+    opacity: 1;
+    transform: translate3d(0, 20px, 0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translate3d(0, -2000px, 0);
+  }
+}
+
 body {
   font-family: 'Muli', sans-serif;
   header {
@@ -16,9 +36,13 @@ body {
       margin: 0 20px;
       list-style: none;
       display: inline-block;
-      &:last-of-type {
-        margin-right: 40px;
-        float: right;
+      float: right;
+      padding: 0 10px;
+      &:first-of-type {
+        float: left;
+      }
+      img {
+        vertical-align: bottom;
       }
     }
     span {
