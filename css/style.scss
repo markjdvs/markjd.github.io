@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Muli:400,900');
+@import 'animate.css';
 
 $green: #095839;
 $purple: #5F052E;
@@ -6,33 +7,70 @@ $navy: #19336E;
 
 body {
   font-family: 'Muli', sans-serif;
+  header {
+    overflow: auto;
+    h1 {
+      color: $purple;
+    }
+    li {
+      margin: 0 20px;
+      list-style: none;
+      display: inline-block;
+      &:last-of-type {
+        margin-right: 40px;
+        float: right;
+      }
+    }
+    span {
+      font-weight: 400;
+    }
+  }
   main {
-    // text-align: center;
-    padding: 30px 0px 0px 0px;
+    text-align: center;
     button:focus {
       outline: 0;
     }
     button {
-      height: 125px;
-      width: 125px;
-      border-radius: 100%;
+      display: none;
+      height: 300px;
+      width: 300px;
+      color: #fff;
+      border-radius: 10px;
       border: 0;
       background-color: #fff;
-      font-size: 22px;
+      font-size: 32px;
       text-transform: uppercase;
       font-weight: 800;
       margin: 0 20px;
-      &.about {
-        color: $purple;
+      &:nth-of-type(3n+1) {
+        background-color: $green;
       }
-      &.projects {
-        color: $green;
+      &:nth-of-type(3n+2) {
+        background-color: $purple;
+      }
+      &:nth-of-type(3n+3) {
+        background-color: $navy;
       }
     }
     div.title {
       font-size: 30px;
       h1 {
         color: #fff;
+      }
+    }
+    div.skills {
+      ul {
+        li {
+          display: inline-block;
+          list-style: none;
+          width: 100px;
+          height: 100px;
+          margin: 7px;
+          img {
+            vertical-align: middle;
+            max-width: 100%;
+          }
+        }
       }
     }
     div.about {

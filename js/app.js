@@ -1,10 +1,33 @@
-console.log('Wagwan');
+/* global ignore:skills ignore:projects ignore:about */
 
 $(() => {
+
+  // const about = $.getScript('./js/about.js');
+  // const projects = $.getScript('./js/projects.js');
 
   let projectsDisplayed = false;
   let infoDisplayed = false;
   let aboutDisplayed = false;
+  const $introButtons = $('div.introButtons');
+  const $projectsBtn = $('button.projects');
+  const $aboutBtn = $('button.about');
+  const $skillsBtn = $('button.skills');
+
+  function createPage() {
+    $introButtons.addClass('animated flipInX');
+    $projectsBtn.fadeIn().on('click', toggleProjects);
+    $aboutBtn.fadeIn().on('click', toggleAbout);
+    $skillsBtn.fadeIn().on('click', toggleSkills);
+  }
+
+  function toggleSkills() {
+    $introButtons.addClass('animated flipOutX').fadeOut(700, () => {
+      $('main').append(`<div class='skills'><ul></ul></div>`);
+      $.each(skills, (i, skill) => {
+        $('div.skills ul').append(`<li><img src='${skill}'></li>`).children().addClass('animated pulse');
+      });
+    });
+  }
 
   function toggleInfo() {
     if(infoDisplayed) {
@@ -22,19 +45,21 @@ $(() => {
     infoDisplayed = !infoDisplayed;
   }
 
-  function createPage() {
-    $('main').append(`<div class='title'><h1>Mark J Davis</h1><p></p></div><button class='about'>About</button><button class='projects'>Projects</button>`);
-    toggleAbout();
-    $('button.projects').on('click', toggleProjects);
-    $('button.about').on('click', toggleAbout);
-  }
-
   function toggleAbout() {
     if(aboutDisplayed) {
-      $('div.about').remove();
+      $introButtons.addClass('animated flipOutX').fadeOut(700, () => {
+        $('div.about').fadeOut();
+      });
     } else {
-      $('div.projects').remove();
-      $('main').append(`<div class='about'><p>${about.content1}</p><p>${about.content2}</p></div>`).hide().slideDown();
+      $introButtons.addClass('animated flipOutX').fadeOut(700, () => {
+        $('div.projects').remove();
+        $('main').append(`
+          <div class='about'>
+            <p>${about.content1}</p>
+            <p>${about.content2}</p>
+          </div>
+        `).hide().slideDown();
+      });
     }
     aboutDisplayed = !aboutDisplayed;
   }
@@ -69,11 +94,10 @@ $(() => {
   function resizeSquare(e) {
     const grandparentOfTarget = $(e.target).parent().parent();
     // grandparentOfTarget.index();
-    grandparentOfTarget.css({position: 'relative'});
+    grandparentOfTarget.css({ position: 'relative' });
     const heightOfParent = $(e.target).parents('div.projects').height();
     const widthOfParent = $(e.target).parents('div.projects').width();
-    // grandparentOfTarget.animate( { height: heightOfParent, width: widthOfParent } );
-    grandparentOfTarget.animate({right: '400px', bottom: '400px', width: widthOfParent, height: heightOfParent}, 1000);
+    grandparentOfTarget.animate({width: widthOfParent, height: heightOfParent}, 1000);
   }
 
   createPage();
