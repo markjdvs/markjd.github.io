@@ -14,16 +14,27 @@ $(() => {
   const $skillsBtn = $('button.skills');
   const $navButtonsSwitch = $('li.navButtons');
 
-  // $navButtonsSwitch.on('click', toggleNavButtons);
+  $navButtonsSwitch.on('click', toggleNavButtons);
 
   function toggleNavButtons() {
-    $navButtonsSwitch.addClass('animated bounceOutUp');
-    setTimeout(function() {
-      $navButtonsSwitch.children().attr('src', './images/up.png');
-    }, 500);
+
+    if($navButtonsSwitch.hasClass('bounceOutUp')) {
+      console.log('nothing displayed');
+      $navButtonsSwitch.children().attr('src', './images/down.png');
+      $navButtonsSwitch.toggleClass('bounceOutUp').toggleClass('slideInDown');
+      $('div.skills').hide();
+      $introButtons.removeClass().show().addClass('animated flipInX');
+    } else {
+      console.log('need to display something');
+      $navButtonsSwitch.toggleClass('slideInDown').toggleClass('bounceOutUp');
+      setTimeout(function() {
+        $navButtonsSwitch.children().attr('src', './images/up.png');
+      }, 500);
+    }
   }
 
   function createPage() {
+    $navButtonsSwitch.addClass('animated slideInDown');
     $introButtons.addClass('animated flipInX');
     $projectsBtn.fadeIn().on('click', toggleProjects);
     $aboutBtn.fadeIn().on('click', toggleAbout);
