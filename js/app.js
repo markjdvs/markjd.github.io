@@ -1,9 +1,6 @@
-/* global ignore:skills ignore:projects ignore:about */
+/* global skills:ignore projects:ignore about:ignore */
 
 $(() => {
-
-  // const about = $.getScript('./js/about.js');
-  // const projects = $.getScript('./js/projects.js');
 
   let projectsDisplayed = false;
   let infoDisplayed = false;
@@ -16,15 +13,19 @@ $(() => {
 
   $navButtonsSwitch.on('click', toggleNavButtons);
 
+  function refreshDisplayContent() {
+    $('div.skills').hide();
+    $('div.projects').hide();
+    $('div.about').hide();
+  }
+
   function toggleNavButtons() {
 
     if($navButtonsSwitch.hasClass('bounceOutUp')) {
       console.log('nothing displayed');
       $navButtonsSwitch.children().attr('src', './images/down.png');
       $navButtonsSwitch.toggleClass('bounceOutUp').toggleClass('slideInDown');
-      $('div.skills').hide();
-      $('div.projects').hide();
-      $('div.about').hide();
+      refreshDisplayContent();
       $introButtons.removeClass().show().addClass('animated flipInX');
     } else {
       console.log('need to display something');
@@ -54,6 +55,7 @@ $(() => {
   }
 
   function toggleInfo() {
+    console.log('running toggleInfo');
     if(infoDisplayed) {
       const className = $(this).data('proj');
       $(`.${className} p`).slideUp();
@@ -80,8 +82,7 @@ $(() => {
         $('div.projects').remove();
         $('main').append(`
           <div class='about'>
-            <p>${about.content1}</p>
-            <p>${about.content2}</p>
+            <p>${about.content1} ${about.content2}</p>
           </div>
         `).hide().slideDown();
       });
@@ -107,26 +108,28 @@ $(() => {
               <div class='${project.class}'>
                 <h1>${project.appName}</h1>
                 <p>${project.content}</p>
-                <a href='${project.github}' target='_blank'><img src='images/github.png'></a>
-                <a href='${project.link}' target='_blank'><img src='images/playIcon.png'></a>
+                <a href='${project.github}' target='_blank'><img src='images/githubWhite.png'></a>
                 <span><img class='plus' src='images/plus.png' data-proj='${project.class}'></span>
               </div>`).fadeIn();
           }, i*100);
         });
+        setTimeout(() => {
+          $('img.plus').on('click', toggleInfo);
+        }, 1000);
       });
-      $('div.projects').on('click', 'img.plus', resizeSquare);
     }
     projectsDisplayed = !projectsDisplayed;
   }
 
-  function resizeSquare(e) {
-    const grandparentOfTarget = $(e.target).parent().parent();
-    // grandparentOfTarget.index();
-    grandparentOfTarget.css({ position: 'relative' });
-    const heightOfParent = $(e.target).parents('div.projects').height();
-    const widthOfParent = $(e.target).parents('div.projects').width();
-    grandparentOfTarget.animate({width: widthOfParent, height: heightOfParent}, 1000);
-  }
+  // function resizeSquare(e) {
+  //   console.log('clicked');
+  //   const grandparentOfTarget = $(e.target).parent().parent();
+  //   // grandparentOfTarget.index();
+  //   grandparentOfTarget.css({ position: 'relative' });
+  //   const heightOfParent = $(e.target).parents('div.projects').height();
+  //   const widthOfParent = $(e.target).parents('div.projects').width();
+  //   grandparentOfTarget.animate({width: widthOfParent, height: heightOfParent}, 1000);
+  // }
 
   createPage();
 });

@@ -11,6 +11,7 @@ const skills = [
   './images/gulp.png',
   './images/heroku.jpeg',
   './images/html5.png',
+  './images/es6.svg',
   './images/jquery.png',
   './images/jwt.jpeg',
   './images/marvel.png',

@@ -5,30 +5,11 @@ $green: #095839;
 $purple: #5F052E;
 $navy: #19336E;
 
-// .reverse {
-//   animation: reverse 5s infinite;
-// }
-//
-// @keyframes reverse {
-//   20% {
-//     transform: translate3d(0, -10px, 0);
-//   }
-//
-//   40%, 45% {
-//     opacity: 1;
-//     transform: translate3d(0, 20px, 0);
-//   }
-//
-//   to {
-//     opacity: 0;
-//     transform: translate3d(0, -2000px, 0);
-//   }
-// }
-
 body {
   font-family: 'Muli', sans-serif;
   header {
     overflow: auto;
+    margin-bottom: 80px;
     h1 {
       color: $purple;
     }
@@ -101,26 +82,24 @@ body {
       margin: 0 auto;
       text-align: center;
       border-radius: 10px;
-      max-width: 500px;
-      height: 500px;
+      max-width: 400px;
+      height: 400px;
       // -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.5);
       // -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.5);
       box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.5);
       background-color: $purple;
       p {
         color: #fff;
-        font-weight: 400;
         letter-spacing: .1em;
-        width: 500px;
         margin: 0 auto;
-        padding-bottom: 15px;
+        // line-height: 80%;
         font-size: 20px;
       }
     }
     div.projects {
       text-align: center;
       padding: 0;
-      max-width: 500px;
+      max-width: 800px;
       height: 500px;
       margin: 0 auto;
       overflow: hidden;
@@ -128,7 +107,7 @@ body {
         border-radius: 10px;
         // -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.5);
         // -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.5);
-        box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.5);
+        // box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.5);
         width: 48%;
         height: 48%;
         float: left;
@@ -138,9 +117,6 @@ body {
           letter-spacing: 1.5px;
           display: none;
           font-size: 18px;
-        }
-        img.infoUp {
-          display: none;
         }
         &:nth-child(3n+1) {
           background-color: $purple;
