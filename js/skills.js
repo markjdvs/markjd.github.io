@@ -21,6 +21,7 @@ const skills = [
   './images/postgresql.png',
   './images/rails.svg',
   './images/react.png',
+  './images/ruby.jpg',
   './images/sass.png',
   './images/satellizer.jpg',
   './images/Trello.png',

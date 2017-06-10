@@ -23,6 +23,8 @@ $(() => {
       $navButtonsSwitch.children().attr('src', './images/down.png');
       $navButtonsSwitch.toggleClass('bounceOutUp').toggleClass('slideInDown');
       $('div.skills').hide();
+      $('div.projects').hide();
+      $('div.about').hide();
       $introButtons.removeClass().show().addClass('animated flipInX');
     } else {
       console.log('need to display something');
