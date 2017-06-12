@@ -11,9 +11,8 @@ $(() => {
   const $skillsBtn = $('button.skills');
   const $navButtonsSwitch = $('li.navButtons');
 
-  $navButtonsSwitch.on('click', toggleNavButtons);
-
   function refreshDisplayContent() {
+    $navButtonsSwitch.off('click', toggleNavButtons);
     $('div.skills').hide();
     $('div.projects').remove();
     projectsDisplayed = false;
@@ -22,7 +21,6 @@ $(() => {
   }
 
   function toggleNavButtons() {
-
     if($navButtonsSwitch.hasClass('bounceOutUp')) {
       console.log('nothing displayed');
       $navButtonsSwitch.children().attr('src', './images/down.png');
@@ -48,6 +46,7 @@ $(() => {
 
   function toggleSkills() {
     toggleNavButtons();
+    $navButtonsSwitch.on('click', toggleNavButtons);
     $introButtons.addClass('animated flipOutX').fadeOut(700, () => {
       $('main').append(`<div class='skills'><ul></ul></div>`);
       $.each(skills, (i, skill) => {
@@ -80,6 +79,7 @@ $(() => {
 
   function toggleAbout() {
     toggleNavButtons();
+    $navButtonsSwitch.on('click', toggleNavButtons);
     if(aboutDisplayed) {
       $introButtons.addClass('animated flipOutX').fadeOut(700, () => {
         $('div.about').fadeOut();
@@ -99,6 +99,7 @@ $(() => {
 
   function toggleProjects() {
     toggleNavButtons();
+    $navButtonsSwitch.on('click', toggleNavButtons);
     if(projectsDisplayed) {
       $introButtons.addClass('animated flipOutX').fadeOut(700, () => {
         $('div.projects').fadeOut(400, () => {
