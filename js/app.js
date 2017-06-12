@@ -21,14 +21,14 @@ $(() => {
   }
 
   function toggleNavButtons() {
+    $('main').removeClass();
+
     if($navButtonsSwitch.hasClass('bounceOutUp')) {
-      console.log('nothing displayed');
       $navButtonsSwitch.children().attr('src', './images/down.png');
       $navButtonsSwitch.toggleClass('bounceOutUp').toggleClass('slideInDown');
       refreshDisplayContent();
       $introButtons.removeClass().show().addClass('animated flipInX');
     } else {
-      console.log('need to display something');
       $navButtonsSwitch.toggleClass('slideInDown').toggleClass('bounceOutUp');
       setTimeout(function() {
         $navButtonsSwitch.children().attr('src', './images/up.png');
@@ -56,24 +56,7 @@ $(() => {
   }
 
   function toggleInfo(e) {
-    console.log('running toggleInfo');
-    console.log($(e.target).parent().parent().parent());
     $(e.target).parent().parent().parent().flip();
-
-
-
-    // if(infoDisplayed) {
-    //   const className = $(this).data('proj');
-    //   $(`.${className} p`).slideUp();
-    //   $(`.${className} img.infoUp`).hide();
-    //   $(`.${className} img.infoDown`).show();
-    // } else {
-    //   const className = $(this).data('proj');
-    //   $(`.${className} p`).slideDown(1000);
-    //   $(`.${className} img.infoDown`).hide();
-    //   $(`.${className} img.infoUp`).show();
-    //
-    // }
     infoDisplayed = !infoDisplayed;
   }
 
@@ -91,7 +74,7 @@ $(() => {
           <div class='about'>
             <p>${about.content1} ${about.content2}</p>
           </div>
-        `).hide().slideDown();
+        `).show().addClass('animated flipInX');
       });
     }
     aboutDisplayed = !aboutDisplayed;
@@ -123,7 +106,6 @@ $(() => {
                 <div class='back'>${project.content}</div>
               </div>
               `).fadeIn();
-            console.log();
           }, i*100);
         });
         setTimeout(() => {
@@ -133,16 +115,6 @@ $(() => {
     }
     projectsDisplayed = !projectsDisplayed;
   }
-
-  // function resizeSquare(e) {
-  //   console.log('clicked');
-  //   const grandparentOfTarget = $(e.target).parent().parent();
-  //   // grandparentOfTarget.index();
-  //   grandparentOfTarget.css({ position: 'relative' });
-  //   const heightOfParent = $(e.target).parents('div.projects').height();
-  //   const widthOfParent = $(e.target).parents('div.projects').width();
-  //   grandparentOfTarget.animate({width: widthOfParent, height: heightOfParent}, 1000);
-  // }
 
   createPage();
 });
