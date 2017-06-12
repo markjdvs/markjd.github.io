@@ -15,8 +15,10 @@ $(() => {
 
   function refreshDisplayContent() {
     $('div.skills').hide();
-    $('div.projects').hide();
+    $('div.projects').remove();
+    projectsDisplayed = false;
     $('div.about').hide();
+    aboutDisplayed = false;
   }
 
   function toggleNavButtons() {
@@ -118,7 +120,8 @@ $(() => {
                   <span><img class='plus' src='images/plus.png'></span>
                 </div>
                 <div class='back'>${project.content}</div>
-              </div>`).fadeIn();
+              </div>
+              `).fadeIn();
             console.log();
           }, i*100);
         });

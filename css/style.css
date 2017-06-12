@@ -88,6 +88,7 @@ body {
           transform: rotateY(0deg);
           transition: all 0.5s ease-out; }
         body main div.projects div.card .back {
+          color: #fff;
           backface-visibility: hidden;
           transform-style: preserve-3d;
           position: relative;
@@ -96,6 +97,8 @@ body {
           width: 100%;
           transform: rotateY(-180deg);
           transition: all 0.5s ease-out; }
+          body main div.projects div.card .back span {
+            padding: 100px; }
       body main div.projects div {
         border-radius: 10px;
         width: 48%;
@@ -107,17 +110,13 @@ body {
           letter-spacing: 1.5px;
           display: none;
           font-size: 18px; }
-        body main div.projects div > div:nth-child(3n+1) {
-          background-color: #5F052E; }
-          body main div.projects div > div:nth-child(3n+1) h1 {
-            color: #fff; }
-        body main div.projects div > div:nth-child(3n+2) {
-          background-color: #095839; }
-          body main div.projects div > div:nth-child(3n+2) h1 {
-            color: #fff; }
-        body main div.projects div > div:nth-child(3n+3) {
-          background-color: #19336E; }
-          body main div.projects div > div:nth-child(3n+3) h1 {
-            color: #fff; }
+        body main div.projects div h1 {
+          color: #fff; }
+        body main div.projects div:nth-child(3n+1) div {
+          background: #095839; }
+        body main div.projects div:nth-child(3n+2) div {
+          background: #19336E; }
+        body main div.projects div:nth-child(3n+3) div {
+          background: #5F052E; }
 
 /*# sourceMappingURL=style.css.map */
