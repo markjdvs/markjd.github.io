@@ -54,20 +54,25 @@ $(() => {
     });
   }
 
-  function toggleInfo() {
+  function toggleInfo(e) {
     console.log('running toggleInfo');
-    if(infoDisplayed) {
-      const className = $(this).data('proj');
-      $(`.${className} p`).slideUp();
-      $(`.${className} img.infoUp`).hide();
-      $(`.${className} img.infoDown`).show();
-    } else {
-      const className = $(this).data('proj');
-      $(`.${className} p`).slideDown(1000);
-      $(`.${className} img.infoDown`).hide();
-      $(`.${className} img.infoUp`).show();
+    console.log($(e.target).parent().parent().parent());
+    $(e.target).parent().parent().parent().flip();
 
-    }
+
+
+    // if(infoDisplayed) {
+    //   const className = $(this).data('proj');
+    //   $(`.${className} p`).slideUp();
+    //   $(`.${className} img.infoUp`).hide();
+    //   $(`.${className} img.infoDown`).show();
+    // } else {
+    //   const className = $(this).data('proj');
+    //   $(`.${className} p`).slideDown(1000);
+    //   $(`.${className} img.infoDown`).hide();
+    //   $(`.${className} img.infoUp`).show();
+    //
+    // }
     infoDisplayed = !infoDisplayed;
   }
 
@@ -105,12 +110,16 @@ $(() => {
         $.each(projects, (i, project) => {
           setTimeout(() => {
             $('div.projects').append(`
-              <div class='${project.class}'>
-                <h1>${project.appName}</h1>
-                <p>${project.content}</p>
-                <a href='${project.github}' target='_blank'><img src='images/githubWhite.png'></a>
-                <span><img class='plus' src='images/plus.png' data-proj='${project.class}'></span>
+              <div class='${project.class} card'>
+                <div class='front'>
+                  <h1>${project.appName}</h1>
+                  <p>${project.content}</p>
+                  <a href='${project.github}' target='_blank'><img src='images/githubWhite.png'></a>
+                  <span><img class='plus' src='images/plus.png'></span>
+                </div>
+                <div class='back'>${project.content}</div>
               </div>`).fadeIn();
+            console.log();
           }, i*100);
         });
         setTimeout(() => {
