@@ -95,6 +95,8 @@ body {
           transition: all 0.5s ease-out; }
         body main div.projects div.card .back {
           color: #fff;
+          padding: 30px 20px 0 20px;
+          box-sizing: border-box;
           backface-visibility: hidden;
           transform-style: preserve-3d;
           position: relative;
