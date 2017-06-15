@@ -1,7 +1,6 @@
 /* global skills:ignore projects:ignore about:ignore */
 
 $(() => {
-
   let projectsDisplayed = false;
   let infoDisplayed = false;
   let aboutDisplayed = false;
@@ -73,6 +72,7 @@ $(() => {
         $('main').append(`
           <div class='about'>
             <p>${about.content1} ${about.content2}</p>
+            <p><a href="${about.github}" target="_blank"><img src="./images/githubWhite.png"></a><a href="mailto:markjdvs@gmail.com" target="_blank"><img src="./images/mail.png"></a><a href="${about.linkedIn}" target="_blank"><img src="./images/linkedIn.png"></a></p>
           </div>
         `).show().addClass('animated flipInX');
       });

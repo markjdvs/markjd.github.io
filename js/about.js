@@ -1,4 +1,6 @@
 const about = {
   content1: `Hi I'm Mark, great to meet you!<br><br>`,
-  content2: `I'm a web developer working in London. <br><br> I love languages and coding is another that I've had a pop at. <br><br> Hope you enjoy my work.`
+  content2: `I'm a web developer working in London. <br><br> I love languages and coding is one of them.<br><br> Feel free to contact me via the methods below or you can download my CV <a href="./images/Mark_Jonathan_Davis.pdf" target="_blank">here</a>.`,
+  github: 'https://github.com/markjdvs',
+  linkedIn: 'https://www.linkedin.com/in/markjdvs'
 };
