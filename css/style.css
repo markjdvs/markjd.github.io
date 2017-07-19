@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Muli:400,900");
 @import url(animate.css);
 body {
-  font-family: 'Muli', sans-serif; }
+  font-family: 'Muli', sans-serif;
+  background: linear-gradient(to right, #FFFFE0, #e6e6e6); }
   body header {
     overflow: auto;
     margin-bottom: 80px; }
