@@ -3,14 +3,14 @@ const projects = [
     appName: 'Between Many Ferns',
     content: `A moving puzzle game similar to Candy Crush with the ability to vary the size of the board. The objective is to match chains of tiles together in order to gain points, and new tiles cascade down to refill the board.`,
     github: `https://github.com/markjdvs/between-many-ferns`,
-    link: `https://secure-dawn-20517.herokuapp.com/`,
+    link: `https://between-many-ferns.herokuapp.com/`,
     class: 'fern'
 
   }, {
-    appName: 'GuideBlog',
+    appName: 'Guideblog',
     content: `A voluntarily pair-coded project built with a Ruby on Rails back-end API, with an Angular front-end and JWT authentication. This mobile-first app is driven by users’ blog posts from visiting areas around the world to create clusters of interest across the globe that new users can tap into in order to plan future trips.`,
     github: `https://github.com/markjdvs/guideblog-fe`,
-    link: 'https://secure-plateau-23163.herokuapp.com/',
+    link: 'https://guideblog.herokuapp.com/',
     class: 'guide'
   }, {
     appName: 'Last.drank',
@@ -19,10 +19,10 @@ const projects = [
     link: `https://last-drank.herokuapp.com/`,
     class: 'drank'
   }, {
-    appName: 'Ritemove',
+    appName: 'Groupmove',
     content: `A group project that provides a platform for finding rental properties as a group. An Express app with an Angular front-end which allows the user to search for properties and compile favourites into a group profile page. Photos uploaded by members of the group can then be commented on and the property rated.`,
-    github: `https://github.com/markjdvs/ritemove`,
-    link: 'https://pnc-app.herokuapp.com/',
+    github: `https://github.com/markjdvs/groupmove`,
+    link: 'https://groupmove.herokuapp.com/',
     class: 'rite'
   }
 ];
