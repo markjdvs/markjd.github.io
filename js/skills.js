@@ -9,7 +9,7 @@ const skills = [
   './images/css3.png',
   './images/express.svg',
   './images/gulp.png',
-  './images/heroku.jpeg',
+  './images/heroku.jpg',
   './images/html5.png',
   './images/es6.svg',
   './images/jquery.png',
