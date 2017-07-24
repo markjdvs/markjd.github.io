@@ -50,10 +50,8 @@ $(() => {
     $introButtons.addClass('animated flipOutX').fadeOut(700, () => {
       $('main').append(`<div class='skills'><ul></ul></div>`);
       $.each(skills, (i, skill) => {
-        $('div.skills ul').append(`<li><img src='${skill}'></li>`).addClass('animated pulse');
+        $('div.skills ul').append(`<li><img src='${skill}'></li>`).fadeIn();
       });
-      // $('div skills ul').children().addClass('animated pulse');
-
     });
   }
 
